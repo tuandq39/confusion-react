@@ -1,7 +1,16 @@
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import "./App.css";
 import { Navbar, NavbarBrand } from "reactstrap";
+import { Welcome } from "./Components/Welcome";
+import { Comment } from "./Components/Comment";
+import Car from "./Components/Car";
+import Menu from "./Components/MenuComponent";
 
+const comment = {
+  date: new Date(),
+  text: "I hope you enjoy my restaurant",
+  author: { name: "alberto", avatarUrl: "./assets/images/alberto.png" },
+};
 function App() {
   return (
     // <div className="App">
@@ -20,12 +29,24 @@ function App() {
     //     </a>
     //   </header>
     // </div>
+
     <div className="App">
       <Navbar dark color="primary">
         <div className="container">
           <NavbarBrand>Ristorante Con Fusion</NavbarBrand>
         </div>
       </Navbar>
+      <Welcome name="Tuan"></Welcome>
+      <Welcome name="Van"></Welcome>
+      <Welcome name="Thuy van"></Welcome>
+
+      <Comment
+        date={comment.date}
+        text={comment.text}
+        author={comment.author}
+      ></Comment>
+      <Car></Car>
+      <Menu></Menu>
     </div>
   );
 }
