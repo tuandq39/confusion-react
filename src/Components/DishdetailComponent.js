@@ -64,14 +64,14 @@ export default class DishDetail extends Component {
   }
 
   render() {
-    if (this.props.selectedDish != null) {
+    if (this.props.dish != null) {
       return (
         <div className="row">
           <div className="col-12 col-md-5 m-1">
-            {this.renderDIsh(this.props.selectedDish)}
+            {this.renderDIsh(this.props.dish)}
           </div>
 
-          {this.renderComments(this.props.selectedDish.comments)}
+          {this.renderComments(this.props.dish.comments)}
         </div>
       );
     } else {

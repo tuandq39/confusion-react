@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { Navbar, NavbarBrand } from "reactstrap";
 import { DISHES } from "../shared/dishes";
+import DishDetail from "./DishdetailComponent";
 import Menu from "./MenuComponent";
 
 class Main extends Component {
@@ -28,7 +29,16 @@ class Main extends Component {
           dishes={this.state.dishes}
           onClick={(dishId) => this.onDishSelect(dishId)}
         ></Menu>
+        <DishDetail
+          dish={
+            this.state.dishes.filter(
+              (dish) => dish.id === this.state.selectedDish
+            )[0]
+          }
+        ></DishDetail>
       </div>
     );
   }
 }
+
+export default Main;
