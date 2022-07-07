@@ -57,7 +57,16 @@ class App extends Component {
   }
 
   render() {
-    return <Menu dishes={this.state.dishes}></Menu>;
+    return (
+      <div>
+        <Navbar dark color="primary">
+          <div className="container">
+            <NavbarBrand>Ristorante Con Fusion</NavbarBrand>
+          </div>
+        </Navbar>
+        <Menu dishes={this.state.dishes}></Menu>
+      </div>
+    );
   }
 }
 
