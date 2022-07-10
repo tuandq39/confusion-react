@@ -59,7 +59,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="">
         {/* <Navbar dark color="primary">
           <div className="container">
             <NavbarBrand>Ristorante Con Fusion</NavbarBrand>
