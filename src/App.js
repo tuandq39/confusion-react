@@ -8,6 +8,7 @@ import Menu from "./Components/MenuComponent";
 import { Component } from "react";
 import { DISHES } from "./shared/dishes";
 import Main from "./Components/MainComponent";
+import { BrowserRouter } from "react-router-dom";
 
 const comment = {
   date: new Date(),
@@ -59,15 +60,20 @@ class App extends Component {
 
   render() {
     return (
-      <div className="">
-        {/* <Navbar dark color="primary">
-          <div className="container">
-            <NavbarBrand>Ristorante Con Fusion</NavbarBrand>
-          </div>
-        </Navbar>
-        <Menu dishes={this.state.dishes}></Menu> */}
-        <Main></Main>
-      </div>
+      // <div className="">
+      //   {/* <Navbar dark color="primary">
+      //     <div className="container">
+      //       <NavbarBrand>Ristorante Con Fusion</NavbarBrand>
+      //     </div>
+      //   </Navbar>
+      //   <Menu dishes={this.state.dishes}></Menu> */}
+      //   <Main></Main>
+      // </div>
+      <BrowserRouter>
+        <div className="App">
+          <Main />
+        </div>
+      </BrowserRouter>
     );
   }
 }
