@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import {
   Media,
   Card,
@@ -7,6 +8,8 @@ import {
   CardText,
   CardBody,
   CardTitle,
+  Breadcrumb,
+  BreadcrumbItem,
 } from "reactstrap";
 // export default class DishDetail extends Component {
 //   constructor(props) {
@@ -127,17 +130,41 @@ function renderComments(comments) {
 }
 
 const DishDetail = (props) => {
-  if (props.dish != null) {
-    return (
-      <div className="row">
-        <div className="col-12 col-md-5 m-1">{renderDIsh(props.dish)}</div>
+  // if (props.dish != null) {
+  //   return (
+  //     <div className="row">
+  //       <div className="col-12 col-md-5 m-1">{renderDIsh(props.dish)}</div>
 
-        {renderComments(props.dish.comments)}
+  //       {renderComments(props.dish.comments)}
+  //     </div>
+  //   );
+  // } else {
+  //   return <div></div>;
+  // }
+  return (
+    <div className="container">
+      <div className="row">
+        <Breadcrumb>
+          <BreadcrumbItem>
+            <Link to="/menu">Menu</Link>
+          </BreadcrumbItem>
+          <BreadcrumbItem active>{props.dish.name}</BreadcrumbItem>
+        </Breadcrumb>
+        <div className="col-12">
+          <h3>{props.dish.name}</h3>
+          <hr />
+        </div>
       </div>
-    );
-  } else {
-    return <div></div>;
-  }
+      <div className="row">
+        <div className="col-12 col-md-5 m-1">
+          <renderDIsh dish={props.dish} />
+        </div>
+        <div className="col-12 col-md-5 m-1">
+          <renderComments comments={props.comments} />
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default DishDetail;
